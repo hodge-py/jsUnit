@@ -1,10 +1,6 @@
-class jsUnit {
-    constructor() {
+export default class JSUnit {
 
-
-    }
-
-    stateEqual(arg1, arg2) {
+    assertEqual(arg1, arg2, msg="") {
         let start = performance.now();
         if (arg1 === arg2) {
             console.log(true);
@@ -13,19 +9,39 @@ class jsUnit {
             console.log(false);
         }
         let timeTaken = performance.now() - start;
-        console.log("Total time taken : " + timeTaken + " milliseconds");
+        console.log(msg);
+        console.log("Total time taken : " + (Math.round(timeTaken * 100)/100) + " milliseconds");
     }
 
+    assertTrue(arg1,msg="") {
+        let start = performance.now();
+        if (arg1) {
+            console.log(true);
+        }
+        else {
+            console.log(false)
+        }
+        let timeTaken = performance.now() - start;
+        console.log(msg);
+        console.log("Total time taken : " + (Math.round(timeTaken * 100)/100) + " milliseconds");
+    }
+
+    assertFalse(arg1) {
+        let start = performance.now();
+        if (!arg1) {
+            console.log(true);
+        }
+        else {
+            console.log(false)
+        }
+        let timeTaken = performance.now() - start;
+        console.log("Total time taken : " + (Math.round(timeTaken * 100)/100) + " milliseconds");
+    }
+
+
+
 }
 
-var unit = new jsUnit();
 
-unit.stateEqual(add(2,2),4)
-
-
-function add(arg1, arg2) {
-    adder = arg1 + arg2
-    return adder
-}
 
 
