@@ -1,5 +1,13 @@
 export default class JSUnit {
 
+
+    main(){
+        return Object.getOwnPropertyNames (Object.getPrototypeOf (this))
+            .filter(propName => (propName !== 'constructor' && typeof this[propName] === 'function'))
+            .forEach(propName => this[propName]());
+    }
+
+    /** asserts if the statement is equal */
     assertEqual(arg1, arg2, msg="") {
         let start = performance.now();
         if (arg1 === arg2) {
@@ -26,7 +34,7 @@ export default class JSUnit {
         console.log("Total time taken : " + (Math.round(timeTaken * 100)/100) + " milliseconds");
     }
 
-    assertFalse(arg1) {
+    assertFalse(arg1, msg="") {
         let start = performance.now();
         if (!arg1) {
             console.log(true);
@@ -36,6 +44,10 @@ export default class JSUnit {
         }
         let timeTaken = performance.now() - start;
         console.log("Total time taken : " + (Math.round(timeTaken * 100)/100) + " milliseconds");
+    }
+
+    assertRaises(exception, msg="") {
+
     }
 
 

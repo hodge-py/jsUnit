@@ -8,5 +8,8 @@
   },
   "author": "Karson Hodge",
   "license": "ISC",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "jsdoc": "^4.0.3"
+  }
 }
