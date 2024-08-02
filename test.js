@@ -2,8 +2,11 @@ import JSUnit from "./index.js"
 
 class Tester extends JSUnit {
 
+    setUp(){
+        this.fire = 4;
+    }
     adder(){
-        this.assertEqual((2+2),4)
+        this.assertEqual((this.fire),4)
     }
 
     subtract(){

@@ -5,6 +5,7 @@ export default class JSUnit {
         return Object.getOwnPropertyNames (Object.getPrototypeOf (this))
             .filter(propName => (propName !== 'constructor' && typeof this[propName] === 'function'))
             .forEach(propName => this[propName]());
+
     }
 
     /** asserts if the statement is equal */
