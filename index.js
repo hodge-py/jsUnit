@@ -46,10 +46,16 @@ export default class JSUnit {
         console.log("Total time taken : " + (Math.round(timeTaken * 100)/100) + " milliseconds");
     }
 
-    assertRaises(exception, msg="") {
-
+    assertRaises(arg, exception, msg="") {
+        try{
+            arg
+        }
+        catch(e){
+            if (e instanceof exception){
+                console.error("TypeError true");
+            }
+        }
     }
-
 
 
 }

@@ -14,6 +14,10 @@ class Tester extends JSUnit {
         this.assertFalse(typeof 2 === "string")
     }
 
+    testerror(){
+
+    }
+
 }
 
 var test = new Tester()
