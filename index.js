@@ -21,6 +21,7 @@ export default class JSUnit {
         console.log("Total time taken : " + (Math.round(timeTaken * 100)/100) + " milliseconds");
     }
 
+    /** Asserts that the statement is True */
     assertTrue(arg1,msg="") {
         let start = performance.now();
         if (arg1) {
